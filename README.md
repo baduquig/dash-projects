@@ -1,2 +1,2 @@
-# dash-projects
-Multipage Dash application for personal projects
+# Dash Projects
+Multipage Dash application to house all personal analyses developed in Python Dash 
