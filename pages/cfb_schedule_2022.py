@@ -1,3 +1,4 @@
+"""
 import dash
 import datetime
 import plotly.graph_objects as go
@@ -12,7 +13,7 @@ dash.register_page(
     name='2022 College Football Schedule'
 )
 
-
+df = []
 # TODO:
 # - Scrape schedule data from ESPN
 # - Write data to csv file
@@ -236,3 +237,4 @@ def generate_grid(selected_week, selected_conferences, selected_days, selected_t
 
 
 #~~~ Callbacks ~~~#
+"""
