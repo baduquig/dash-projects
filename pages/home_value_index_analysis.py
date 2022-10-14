@@ -22,13 +22,17 @@ rent['Country'] = 'United States'
 
 state_dropdown_values = _3bed['State'].unique()
 
+
 def get_df(selected_data_source):
     if selected_data_source == '3bed':
         df = _3bed
+        #chart_title = 'Typical home value of 3 bedroom houses'
     elif selected_data_source == '4bed':
         df = _4bed
+        #chart_title = 'Typical home value of 4 bedroom houses'
     else:
         df = rent
+        #chart_title = 'Typical rental rates'
     return df
 
 
@@ -44,7 +48,7 @@ layout = html.Div(
                     options=[
                         {'label': '3-Bedroom Home Values', 'value': '3bed'},
                         {'label': '4-Bedroom Home Values', 'value': '4bed'},
-                        {'label': 'Rental Prices', 'value': 'rent'}
+                        {'label': 'Rental Rates', 'value': 'rent'}
                     ],
                     value='3bed',
                     id='data'
@@ -154,33 +158,44 @@ def set_zip_options(selected_data_source, selected_states, selected_cities):
     Input('city', 'value'),
     Input('zipcode', 'value')
 )
-def set_city_plot(selected_data_source, selected_states, selected_cities, selected_zipcodes):
+def set_plot(selected_data_source, selected_states, selected_cities, selected_zipcodes):
     data_frame = get_df(selected_data_source)
+
+    if selected_data_source == '3bed':
+        chart_title = 'Typical home value of a 3-bedroom home'
+    elif selected_data_source == '4bed':
+        chart_title = 'Typical home value of a 4-bedroom home'
+    else:
+        chart_title = 'Typical rental rates'
     
     if ((selected_states is None or selected_states == []) 
     and (selected_cities is None or selected_cities == []) 
     and (selected_zipcodes is None or selected_zipcodes == [])):
         data_frame = data_frame.drop(['RegionID', 'SizeRank', 'RegionName', 'RegionType', 'StateName', 'State', 'City', 'Metro', 'CountyName'], axis=1)
         data_frame = data_frame.groupby('Country')
+        location = ' in the United States'
     elif((selected_cities is None or selected_cities == []) and (selected_zipcodes is None or selected_zipcodes == [])):
         data_frame = data_frame[data_frame['State'].isin(selected_states)]
         data_frame = data_frame.drop(['RegionID', 'SizeRank', 'RegionName', 'RegionType', 'StateName', 'City', 'Metro', 'CountyName'], axis=1)
         data_frame = data_frame.groupby('State')
+        location = f' in {selected_states}'
     elif(selected_zipcodes is None or selected_zipcodes == []):
         data_frame = data_frame[data_frame['State'].isin(selected_states)]
         data_frame = data_frame[data_frame['City'].isin(selected_cities)]
         data_frame = data_frame.drop(['RegionID', 'SizeRank', 'RegionName', 'RegionType', 'StateName', 'State', 'Metro', 'CountyName'], axis=1)
         data_frame = data_frame.groupby('City')
+        location = f' in {selected_cities}, {selected_states}'
     else:
         data_frame = data_frame[data_frame['State'].isin(selected_states)]
         data_frame = data_frame[data_frame['City'].isin(selected_cities)]
         data_frame = data_frame[data_frame['RegionName'].isin(selected_zipcodes)]
         data_frame = data_frame.groupby('RegionName')
+        location = f' in {selected_zipcodes}'
 
     data_frame = data_frame.mean()
     data_frame = data_frame.transpose()
 
-    fig = px.line(data_frame, labels={'index': 'Year', 'value': 'Typical Home Value'}, title='Typical home value of 3 bedroom houses in the United States')
+    fig = px.line(data_frame, labels={'index': 'Year', 'value': 'Price'}, title=chart_title+location)
     fig.update_layout(title_x=.5)
     for i in range(int(data_frame.iloc[-1].shape[0])):
         x_coord = data_frame.iloc[-1].name
