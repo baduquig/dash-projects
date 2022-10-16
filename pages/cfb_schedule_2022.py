@@ -1,4 +1,4 @@
-import dash, datetime, plotly.graph_objects as go, requests, pandas as pd
+import dash, datetime, plotly.graph_objects as go, re, requests, pandas as pd
 from bs4 import BeautifulSoup
 from dash import callback, html, dcc, Input, Output
 
@@ -11,14 +11,17 @@ from dash import callback, html, dcc, Input, Output
 )"""
 
 
-# ESPN web links
+# ESPN web links https://www.espn.com/college-football/game?gameId=401426532
+espn_url = 'https://www.espn.com'
 schedule_page_prefix = 'https://www.espn.com/college-football/schedule/_/week/'
 schedule_page_suffix = '/year/2022/seasontype/2'
 
-weeks = 1#5
-df = pd.DataFrame(columns=['WEEK_NUM', 'GAME_DATE', 'GAME_TIME', 'AWAY_SCHOOL', 
+weeks = 1#15
+games = pd.DataFrame(columns=['WEEK_NUM', 'GAME_DATE', 'GAME_TIME_SCORE', 'AWAY_SCHOOL', 
                             'AWAY_MASCOT', 'AWAY_CONFERENCE', 'HOME_SCHOOL', 'HOME_MASCOT', 
                             'HOME_CONFERENCE', 'GAME_LOCATION', 'LATITUDE', 'LONGITUDE'])
+
+conference = {}
 
 def get_gamedays(soup):
     event_div = soup.find('div', class_='event-schedule__season')
@@ -32,10 +35,44 @@ def get_games(gameday):
     return game_rows
 
 def set_game_date(gameday):
-    game_date = gameday.find('div', class_='Table__Title')
-    return game_date
+    game_date = gameday.find('div', class_='Table__Title')  
 
+def set_game_time_score(game):
+    result_time_td = game.find_all('td')[2]
+    anchor_tag = result_time_td.a
+    result_time = anchor_tag.text
+    return result_time 
 
+def set_away_school(game):
+    away_school_td = game.find_all('td')[0]
+    anchor_tag = away_school_td.find_all('a')[1]
+    away_school = anchor_tag.text
+    return away_school
+
+def set_home_school(game):
+    home_school_td = game.find_all('td')[0]
+    anchor_tag = home_school_td.find_all('a')[1]
+    home_school = anchor_tag.text
+    return home_school
+
+def get_game_url(result_time_td):
+    links = result_time_td.find(href=True)
+    game_link = links['href']
+    full_url = espn_url + game_link
+    return full_url
+
+def set_location(game):
+    result_time_td = game.find_all('td')[2]
+    game_page_url = get_game_url(result_time_td)
+    
+    rq = requests.get(game_page_url)
+    sp = BeautifulSoup(rq.content, 'html.parser')
+
+    game_info = sp.find('div', id='gamepackage-game-information')
+    location_details = game_info.find('div', class_='location-details')
+    game_location = location_details.find('div', class_='game-location')
+    location_text = game_location.text.lstrip().rstrip()
+    return location_text
 
 def parse_games(season_len, url_prefix, url_suffix):
 
@@ -54,17 +91,22 @@ def parse_games(season_len, url_prefix, url_suffix):
             
             # Iterate through games on a given day
             for game in game_rows:
+                game_time_score = set_game_time_score(game)
+                away_school = set_away_school(game)
+                home_school = set_home_school(game)
+                game_location = set_location(game)
+
                 new_record = {
                     'WEEK_NUM': game_week,
-                    'GAME_DATE': game_date
-                    # 'GAME_TIME':
-                    # 'AWAY_SCHOOL':
+                    'GAME_DATE': game_date,
+                    'GAME_TIME_SCORE': game_time_score,
+                    'AWAY_SCHOOL': away_school,
                     # 'AWAY_MASCOT':
                     # 'AWAY_CONFERENCE':
-                    # 'HOME_SCHOOL':
+                    'HOME_SCHOOL': home_school,
                     # 'HOME_MASCOT':
                     # 'HOME_CONFERENCE':
-                    # 'GAME_LOCATION':
+                    'GAME_LOCATION': game_location
                     # 'LATITUDE':
                     # 'LONGITUDE':
                 }
