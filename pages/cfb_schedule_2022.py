@@ -1,19 +1,79 @@
-"""
-import dash
-import datetime
-import plotly.graph_objects as go
-import pandas as pd
+import dash, datetime, plotly.graph_objects as go, requests, pandas as pd
+from bs4 import BeautifulSoup
 from dash import callback, html, dcc, Input, Output
 
 
-dash.register_page(
+"""dash.register_page(
     __name__,
     path='/cfb-schedule-2022',
     title='2022 College Football Schedule',
     name='2022 College Football Schedule'
-)
+)"""
 
-df = []
+
+# ESPN web links
+schedule_page_prefix = 'https://www.espn.com/college-football/schedule/_/week/'
+schedule_page_suffix = '/year/2022/seasontype/2'
+
+weeks = 1#5
+df = pd.DataFrame(columns=['WEEK_NUM', 'GAME_DATE', 'GAME_TIME', 'AWAY_SCHOOL', 
+                            'AWAY_MASCOT', 'AWAY_CONFERENCE', 'HOME_SCHOOL', 'HOME_MASCOT', 
+                            'HOME_CONFERENCE', 'GAME_LOCATION', 'LATITUDE', 'LONGITUDE'])
+
+def get_gamedays(soup):
+    event_div = soup.find('div', class_='event-schedule__season')
+    gameday_container = event_div.find_next()
+    gamedays = gameday_container.children
+    return gamedays
+
+def get_games(gameday):
+    games_container = gameday.find('tbody', class_='Table__TBODY')
+    game_rows = games_container.children
+    return game_rows
+
+def set_game_date(gameday):
+    game_date = gameday.find('div', class_='Table__Title')
+    return game_date
+
+
+
+def parse_games(season_len, url_prefix, url_suffix):
+
+    # Iterate through weeks in schedule
+    for week in range(season_len):
+        game_week = week + 1
+        schedule_page = f'{url_prefix}{game_week}{url_suffix}'        
+        req = requests.get(schedule_page)
+        soup = BeautifulSoup(req.content, 'html.parser')
+
+        # Iterate through gamedays in week
+        gamedays = get_gamedays(soup)
+        for gameday in gamedays:
+            game_date = set_game_date(gameday)
+            game_rows = get_games(gameday)
+            
+            # Iterate through games on a given day
+            for game in game_rows:
+                new_record = {
+                    'WEEK_NUM': game_week,
+                    'GAME_DATE': game_date
+                    # 'GAME_TIME':
+                    # 'AWAY_SCHOOL':
+                    # 'AWAY_MASCOT':
+                    # 'AWAY_CONFERENCE':
+                    # 'HOME_SCHOOL':
+                    # 'HOME_MASCOT':
+                    # 'HOME_CONFERENCE':
+                    # 'GAME_LOCATION':
+                    # 'LATITUDE':
+                    # 'LONGITUDE':
+                }
+                
+
+        
+
+parse_games(weeks, schedule_page_prefix, schedule_page_suffix)
+"""
 # TODO:
 # - Scrape schedule data from ESPN
 # - Write data to csv file
