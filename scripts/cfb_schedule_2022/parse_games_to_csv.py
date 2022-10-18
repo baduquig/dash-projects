@@ -76,7 +76,11 @@ def set_location(game):
 
 def parse_games(season_len, url_prefix, url_suffix):
 
-    #games_file = open('../../data/cfb_schedule_2022/games.csv', 'w')
+    # CSV File Creation
+    file_header = ['WEEK_NUM', 'GAME_DATE', 'GAME_TIME_SCORE', 'AWAY_SCHOOL', 'HOME_SCHOOL', 'GAME_LOCATION']
+    games_file = open('../../data/cfb_schedule_2022/games.csv', 'w')
+    writer = csv.writer(games_file)
+    writer.writerow(file_header)
 
     # Iterate through weeks in schedule
     for week in range(season_len):
@@ -98,7 +102,7 @@ def parse_games(season_len, url_prefix, url_suffix):
                 home_school = set_home_school(game)
                 game_location = set_location(game)
 
-                new_game_record = {
+                """new_game_record = {
                     'WEEK_NUM': game_week,
                     'GAME_DATE': game_date,
                     'GAME_TIME_SCORE': game_time_score,
@@ -111,8 +115,11 @@ def parse_games(season_len, url_prefix, url_suffix):
                     'GAME_LOCATION': game_location
                     # 'LATITUDE':
                     # 'LONGITUDE':
-                }
-                print(new_game_record)
+                }"""
+                new_game_row = [game_week, game_date, game_time_score, away_school, home_school, game_location]
+                writer.writerow(new_game_row)
+
+    games_file.close()
 
 
 
