@@ -2,33 +2,33 @@ import dash, datetime, plotly.graph_objects as go, pandas as pd
 from dash import callback, html, dcc, Input, Output
 
 
-"""dash.register_page(
+dash.register_page(
     __name__,
     path='/cfb-schedule-2022',
     title='2022 College Football Schedule',
     name='2022 College Football Schedule'
-)"""
+)
 
 # Instantiate Dataframe              
-games = pd.read_csv('../data/cfb_schedule_2022/games.csv')
-schools = pd.read_csv('../data/cfb_schedule_2022/schools.csv')
-locations = pd.read_csv('../data/cfb_schedule_2022/locations.csv')
-print(games)
+games = pd.read_csv('./data/cfb_schedule_2022/games.csv')
+schools = pd.read_csv('./data/cfb_schedule_2022/schools.csv')
+locations = pd.read_csv('./data/cfb_schedule_2022/locations.csv')
+
 # Merge Away School Columns
 df = pd.merge(games, schools, left_on='AWAY_SCHOOL', right_on='SCHOOL_ID', how='left')
 df = df.drop(['AWAY_SCHOOL', 'SCHOOL_ID'], axis=1)
 df.rename(columns= {'SCHOOL_NAME':'AWAY_SCHOOL', 'SCHOOL_MASCOT':'AWAY_MASCOT', 'SCHOOL_CONFERENCE':'AWAY_CONFERENCE'}, inplace=True)
-print(df)
+
 # Merge Home School Columns
 df = pd.merge(df, schools, left_on='HOME_SCHOOL', right_on='SCHOOL_ID', how='left')
 df = df.drop(['HOME_SCHOOL', 'SCHOOL_ID'], axis=1)
 df.rename(columns= {'SCHOOL_NAME':'HOME_SCHOOL', 'SCHOOL_MASCOT':'HOME_MASCOT', 'SCHOOL_CONFERENCE':'HOME_CONFERENCE'}, inplace=True)
-print(df)
+
 # Merge Geocoordinate Columns
 df = pd.merge(df, locations, left_on='GAME_LOCATION', right_on='LOCATION', how='left')
-print(df)
 
-"""
+
+
 # Instantiate initial dropdown values
 weeks = df['WEEK_NUM'].unique()
 conferences = ['ACC', 'American', 'Big 12', 'Big Ten', 'C-USA', 'FBS Indep.', 'MAC', 'Mountain West', 'Pac-12', 'SEC', 'Sun Belt']
@@ -38,13 +38,13 @@ today = datetime.datetime.now()
 first_week = datetime.datetime(2022, 9, 5)
 default_week = 1
 while today >= first_week:
-    first_week += first_week + datetime.timedelta(days=7)
+    first_week += datetime.timedelta(days=7)
     default_week += 1
 
 # Filter schedule
 def filter_df(selected_week, selected_conferences, selected_days, selected_teams):
     games = df
-    games = games`[games['WEEK_NUM'] == selected_week]
+    games = games[games['WEEK_NUM'] == selected_week]
 
     # only week chosen
     if((selected_conferences is None or selected_conferences == [])
@@ -54,21 +54,21 @@ def filter_df(selected_week, selected_conferences, selected_days, selected_teams
     # only week and day chosen
     elif ((selected_conferences is None or selected_conferences == [])
     and (selected_teams is None or selected_teams == [])):
-        games = games[games['GAME_DAY'].isin(selected_days)]
+        games = games[games['GAME_DATE'].isin(selected_days)]
     # only week and conference chosen
     elif ((selected_days is None or selected_days == [])
     and (selected_teams is None or selected_teams == [])):
         games = games[games['AWAY_CONFERENCE'].isin(selected_conferences) | games['HOME_CONFERENCE'].isin(selected_conferences)]
     # only team blank
     elif (selected_teams is None or selected_teams == []):
-        games = games[games['GAME_DAY'].isin(selected_days)]
+        games = games[games['GAME_DATE'].isin(selected_days)]
         games = games[games['AWAY_CONFERENCE'].isin(selected_conferences) | games['HOME_CONFERENCE'].isin(selected_conferences)]
     # only day blank
     elif (selected_days is None or selected_days == []):
         games = games[games['AWAY_CONFERENCE'].isin(selected_conferences) | games['HOME_CONFERENCE'].isin(selected_conferences)]
         games = games[games['AWAY_SCHOOL'].isin(selected_teams) | games['HOME_SCHOOL'].isin(selected_teams)]
     else:
-        games = games[games['GAME_DAY'].isin(selected_days)]
+        games = games[games['GAME_DATE'].isin(selected_days)]
         games = games[games['AWAY_CONFERENCE'].isin(selected_conferences) | games['HOME_CONFERENCE'].isin(selected_conferences)]
         games = games[games['AWAY_SCHOOL'].isin(selected_teams) | games['HOME_SCHOOL'].isin(selected_teams)]
     
@@ -171,7 +171,7 @@ layout = html.Div(
 )
 def set_gamedate_options(selected_week):
     weeks = df[df['WEEK_NUM'] == selected_week]
-    dates = weeks['GAME_DAY'].unique()
+    dates = weeks['GAME_DATE'].unique()
     return dates
 
 
@@ -198,7 +198,7 @@ def set_gamedate_options(selected_conferences):
 def plot_games(selected_week, selected_conferences, selected_days, selected_teams):
     games = filter_df(selected_week, selected_conferences, selected_days, selected_teams)
     
-    game_info = games['AWAY_SCHOOL'] + ' at ' + games['HOME_SCHOOL'] + ' | ' + games['GAME_TIME'] + ', ' + games['GAME_LOCATION']
+    game_info = games['AWAY_SCHOOL'] + ' at ' + games['HOME_SCHOOL'] + ' | ' + games['GAME_TIME_SCORE'] + ', ' + games['GAME_LOCATION']
     
     fig = go.Figure(data=go.Scattergeo(
         locationmode='USA-states',
@@ -227,7 +227,7 @@ def plot_games(selected_week, selected_conferences, selected_days, selected_team
 def generate_grid(selected_week, selected_conferences, selected_days, selected_teams):
     games = filter_df(selected_week, selected_conferences, selected_days, selected_teams)
 
-    games.sort_values(by=['GAME_DAY', 'GAME_TIME'], inplace=True)
+    games.sort_values(by=['GAME_DATE', 'GAME_TIME_SCORE'], inplace=True)
     games['AWAY'] = games['AWAY_SCHOOL'] + ' ' + games['AWAY_MASCOT']
     games['HOME'] = games['HOME_SCHOOL'] + ' ' + games['HOME_MASCOT']
 
@@ -247,4 +247,3 @@ def generate_grid(selected_week, selected_conferences, selected_days, selected_t
 
 
 #~~~ Callbacks ~~~#
-"""
