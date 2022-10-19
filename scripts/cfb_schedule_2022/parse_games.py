@@ -8,10 +8,9 @@ class ParseGames:
         self.espn_url = 'https://www.espn.com'
         self.schedule_page_prefix = 'https://www.espn.com/college-football/schedule/_/week/'
         self.schedule_page_suffix = '/year/2022/seasontype/2'
-        self.weeks = 1#15s
-        self.games = pd.DataFrame(columns=['WEEK_NUM', 'GAME_DATE', 'GAME_TIME_SCORE', 'AWAY_SCHOOL', 
-                                    'AWAY_MASCOT', 'AWAY_CONFERENCE', 'HOME_SCHOOL', 'HOME_MASCOT', 
-                                    'HOME_CONFERENCE', 'GAME_LOCATION', 'LATITUDE', 'LONGITUDE'])
+        self.weeks = 15
+        self.file_header = ['WEEK_NUM', 'GAME_DATE', 'GAME_TIME_SCORE', 'AWAY_SCHOOL', 'HOME_SCHOOL', 'GAME_LOCATION']
+        self.games = pd.DataFrame(columns=self.file_header)
         self.parse_games()
 
     # Web Scraping Functions
@@ -78,19 +77,22 @@ class ParseGames:
         return location_text
 
     def parse_games(self):
-
+        
         # CSV File Creation
-        file_header = ['WEEK_NUM', 'GAME_DATE', 'GAME_TIME_SCORE', 'AWAY_SCHOOL', 'HOME_SCHOOL', 'GAME_LOCATION']
         games_file = open('../../data/cfb_schedule_2022/games.csv', 'w')
         writer = csv.writer(games_file)
-        writer.writerow(file_header)
+        writer.writerow(self.file_header)
 
         # Iterate through weeks in schedule
         for week in range(self.weeks):
+            
+            # Scrape web page of given week in season
             game_week = week + 1
             schedule_page = self.schedule_page_prefix + str(game_week) + self.schedule_page_suffix
             req = requests.get(schedule_page)
             soup = BeautifulSoup(req.content, 'html.parser')
+
+            print(f'\nParsing week {game_week} games:')
 
             # Iterate through gamedays in week
             gamedays = self.get_gamedays(soup)
@@ -100,29 +102,20 @@ class ParseGames:
                 
                 # Iterate through games on a given day
                 for game in game_rows:
-                    game_time_score = self.set_game_time_score(game)
-                    away_school = self.set_away_school(game)
-                    home_school = self.set_home_school(game)
-                    game_location = self.set_location(game)
+                    try:
+                        game_time_score = self.set_game_time_score(game)
+                        away_school = self.set_away_school(game)
+                        home_school = self.set_home_school(game)
+                        game_location = self.set_location(game)
 
-                    """new_game_record = {
-                        'WEEK_NUM': game_week,
-                        'GAME_DATE': game_date,
-                        'GAME_TIME_SCORE': game_time_score,
-                        'AWAY_SCHOOL': away_school,
-                        # 'AWAY_MASCOT':
-                        # 'AWAY_CONFERENCE':
-                        'HOME_SCHOOL': home_school,
-                        # 'HOME_MASCOT':
-                        # 'HOME_CONFERENCE':
-                        'GAME_LOCATION': game_location
-                        # 'LATITUDE':
-                        # 'LONGITUDE':
-                    }"""
-                    new_game_row = [game_week, game_date, game_time_score, away_school, home_school, game_location]
-                    writer.writerow(new_game_row)
+                        new_game_row = [game_week, game_date, game_time_score, away_school, home_school, game_location]
+                        print(f'Writing game "{new_game_row}" to file')
+                        writer.writerow(new_game_row)
+                    except:
+                        pass
 
         games_file.close()
+        print('Game parsing complete...\n')
 
 
 
