@@ -27,7 +27,7 @@ class ParseSchools:
     def get_all_schools(self):
         games_csv_path = '../../data/cfb_schedule_2022/games.csv'
         games_df = pd.read_csv(games_csv_path)
-        all_home_teams = games_df['HOME_SCHOOL'].unique()
+        all_home_teams = games_df['AWAY_SCHOOL'].unique()
         return all_home_teams
 
     def get_school_name_mascot(self, page):

@@ -7,16 +7,31 @@ from dash import callback, html, dcc, Input, Output
     path='/cfb-schedule-2022',
     title='2022 College Football Schedule',
     name='2022 College Football Schedule'
-)
-              
+)"""
 
+# Instantiate Dataframe              
+games = pd.read_csv('../data/cfb_schedule_2022/games.csv')
+schools = pd.read_csv('../data/cfb_schedule_2022/schools.csv')
+locations = pd.read_csv('../data/cfb_schedule_2022/locations.csv')
+print(games)
+# Merge Away School Columns
+df = pd.merge(games, schools, left_on='AWAY_SCHOOL', right_on='SCHOOL_ID', how='left')
+df = df.drop(['AWAY_SCHOOL', 'SCHOOL_ID'], axis=1)
+df.rename(columns= {'SCHOOL_NAME':'AWAY_SCHOOL', 'SCHOOL_MASCOT':'AWAY_MASCOT', 'SCHOOL_CONFERENCE':'AWAY_CONFERENCE'}, inplace=True)
+print(df)
+# Merge Home School Columns
+df = pd.merge(df, schools, left_on='HOME_SCHOOL', right_on='SCHOOL_ID', how='left')
+df = df.drop(['HOME_SCHOOL', 'SCHOOL_ID'], axis=1)
+df.rename(columns= {'SCHOOL_NAME':'HOME_SCHOOL', 'SCHOOL_MASCOT':'HOME_MASCOT', 'SCHOOL_CONFERENCE':'HOME_CONFERENCE'}, inplace=True)
+print(df)
+# Merge Geocoordinate Columns
+df = pd.merge(df, locations, left_on='GAME_LOCATION', right_on='LOCATION', how='left')
+print(df)
 
-# TODO:
-
-
+"""
 # Instantiate initial dropdown values
 weeks = df['WEEK_NUM'].unique()
-conferences = df['HOME_CONFERENCE'].unique()
+conferences = ['ACC', 'American', 'Big 12', 'Big Ten', 'C-USA', 'FBS Indep.', 'MAC', 'Mountain West', 'Pac-12', 'SEC', 'Sun Belt']
 
 # Get current week
 today = datetime.datetime.now()
