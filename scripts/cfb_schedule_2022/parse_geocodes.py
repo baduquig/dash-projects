@@ -42,6 +42,8 @@ class ParseGeocodes:
         writer = csv.writer(locations_file)
         writer.writerow(self.file_header)
 
+        print('\nGeocodes parsing starting...')
+
         # Iterate through all game locations
         locations = self.get_all_locations()
         for location in locations:

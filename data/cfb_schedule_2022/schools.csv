@@ -1,228 +1,229 @@
-SCHOOL_ID,SCHOOL_NAME,SCHOOL_MASCOT,SCHOOL_CONFERENCE
-2046,Austin Peay,Governors,ASUN
-158,Nebraska,Cornhuskers,Big Ten
-304,Idaho State,Bengals,Big Sky
-41,UConn,Huskies,FBS Indep.
-2751,Wyoming,Cowboys,Mountain West
-2184,Duquesne,Dukes,NEC
-2429,Charlotte,49ers,C-USA
-50,Florida A&M,Rattlers,SWAC
-2440,Nevada,Wolf Pack,Mountain West
-249,North Texas,Mean Green,C-USA
-238,Vanderbilt,Commodores,SEC
-2117,Central Michigan,Chippewas,MAC
-277,West Virginia,Mountaineers,Big 12
-2678,VMI,Keydets,Southern
-2598,St. Francis (PA),Red Flash,NEC
-2050,Ball State,Cardinals,MAC
-2569,South Carolina State,Bulldogs,MEAC
-2803,Bryant,Bulldogs,Big South
-112358,Long Island University,Sharks,NEC
-213,Penn State,Nittany Lions,Big Ten
-2197,Eastern Illinois,Panthers,OVC
-2010,Alabama A&M,Bulldogs,SWAC
-2348,Louisiana Tech,Bulldogs,C-USA
-166,New Mexico State,Aggies,FBS Indep.
-2464,Northern Arizona,Lumberjacks,Big Sky
-13,Cal Poly,Mustangs,Big Sky
-2502,Portland State,Vikings,Big Sky
-2711,Western Michigan,Broncos,MAC
-2198,Eastern Kentucky,Colonels,ASUN
-259,Virginia Tech,Hokies,ACC
-2729,William & Mary,Tribe,CAA
-218,Temple,Owls,American
-2635,Tennessee Tech,Golden Eagles,OVC
-356,Illinois,Fighting Illini,Big Ten
-2628,TCU,Horned Frogs,Big 12
-328,Utah State,Aggies,Mountain West
-87,Notre Dame,Fighting Irish,FBS Indep.
-2483,Oregon,Ducks,Pac-12
-2534,Sam Houston,Bearkats,WAC
-254,Utah,Utes,Pac-12
-36,Colorado State,Rams,Mountain West
-2638,UTEP,Miners,C-USA
-399,Albany,Great Danes,CAA
-152,NC State,Wolfpack,ACC
-242,Rice,Owls,C-USA
-2065,Bethune-Cookman,Wildcats,SWAC
-2287,Illinois State,Redbirds,MVFC
-2132,Cincinnati,Bearcats,American
-193,Miami (OH),RedHawks,MAC
-2653,Troy,Trojans,Sun Belt
-248,Houston,Cougars,American
-252,BYU,Cougars,FBS Indep.
-2115,Central Connecticut,Blue Devils,NEC
-2571,South Dakota State,Jackrabbits,MVFC
-2084,Buffalo,Bulls,MAC
-164,Rutgers,Scarlet Knights,Big Ten
-153,North Carolina,Tar Heels,ACC
-48,Delaware,Blue Hens,CAA
-257,Richmond,Spiders,CAA
-2460,Northern Iowa,Panthers,MVFC
-2546,Southeast Missouri State,Redhawks,OVC
-189,Bowling Green,Falcons,MAC
-12,Arizona,Wildcats,Pac-12
-155,North Dakota,Fighting Hawks,MVFC
-2450,Norfolk State,Spartans,MEAC
-202,Tulsa,Golden Hurricane,American
-302,UC Davis,Aggies,Big Sky
-2447,Nicholls,Colonels,Southland
-326,Texas State,Bobcats,Sun Belt
-2415,Morgan State,Bears,MEAC
-2226,Florida Atlantic,Owls,C-USA
-2393,Middle Tennessee,Blue Raiders,C-USA
-2382,Mercer,Bears,Southern
-2210,Elon,Phoenix,CAA
-233,South Dakota,Coyotes,MVFC
-349,Army,Black Knights,FBS Indep.
-2335,Liberty,Flames,FBS Indep.
-113,UMass,Minutemen,FBS Indep.
-2545,SE Louisiana,Lions,Southland
-2755,Grambling,Tigers,SWAC
-235,Memphis,Tigers,American
-2247,Georgia State,Panthers,Sun Belt
-2567,SMU,Mustangs,American
-2142,Colgate,Raiders,Patriot
-93,Murray State,Racers,OVC
-2433,UL Monroe,Warhawks,Sun Belt
-97,Louisville,Cardinals,ACC
-311,Maine,Black Bears,CAA
-70,Idaho,Vandals,Big Sky
-68,Boise State,Broncos,Mountain West
-2309,Kent State,Golden Flashes,MAC
-98,Western Kentucky,Hilltoppers,C-USA
-52,Florida State,Seminoles,ACC
-228,Clemson,Tigers,ACC
-333,Alabama,Crimson Tide,SEC
-2535,Samford,Bulldogs,Southern
-2032,Arkansas State,Red Wolves,Sun Belt
-62,Hawai'i,Rainbow Warriors,Mountain West
-231,Furman,Paladins,Southern
-2026,Appalachian State,Mountaineers,Sun Belt
-276,Marshall,Thundering Herd,Sun Belt
-239,Baylor,Bears,Big 12
-30,USC,Trojans,Pac-12
-9,Arizona State,Sun Devils,Pac-12
-96,Kentucky,Wildcats,SEC
-253,Southern Utah,Thunderbirds,WAC
-2006,Akron,Zips,MAC
-2572,Southern Miss,Golden Eagles,Sun Belt
-2579,South Carolina,Gamecocks,SEC
-2633,Tennessee,Volunteers,SEC
-2127,Charleston Southern,Buccaneers,Big South
-265,Washington State,Cougars,Pac-12
-2110,Central Arkansas,Bears,ASUN
-154,Wake Forest,Demon Deacons,ACC
-2710,Western Illinois,Leathernecks,MVFC
-150,Duke,Blue Devils,ACC
-195,Ohio,Bobcats,MAC
-2636,UTSA,Roadrunners,C-USA
-142,Missouri,Tigers,SEC
-6,South Alabama,Jaguars,Sun Belt
-322,Lafayette,Leopards,Patriot
-38,Colorado,Buffaloes,Pac-12
-338,Kennesaw State,Owls,ASUN
-120,Maryland,Terrapins,Big Ten
-2439,UNLV,Rebels,Mountain West
-66,Iowa State,Cyclones,Big 12
-258,Virginia,Cavaliers,ACC
-282,Indiana State,Sycamores,MVFC
-2681,Wagner,Seahawks,NEC
-2458,Northern Colorado,Bears,Big Sky
-2011,Alabama State,Hornets,SWAC
-2916,Incarnate Word,Cardinals,Southland
-2305,Kansas,Jayhawks,Big 12
-295,Old Dominion,Monarchs,Sun Belt
-107,Holy Cross,Crusaders,Patriot
-2523,Robert Morris,Colonials,Big South
-2241,Gardner-Webb,Bulldogs,Big South
-5,UAB,Blazers,C-USA
-183,Syracuse,Orange,ACC
-2717,Western Carolina,Catamounts,Southern
-2692,Weber State,Wildcats,Big Sky
-2016,Alcorn State,Braves,SWAC
-2320,Lamar,Cardinals,Southland
-47,Howard,Bison,MEAC
-2459,Northern Illinois,Huskies,MAC
-2199,Eastern Michigan,Eagles,MAC
-2229,Florida International,Panthers,C-USA
-2617,Stephen F. Austin,Lumberjacks,WAC
-23,San JosÃ© State,Spartans,Mountain West
-2582,Southern,Jaguars,SWAC
-290,Georgia Southern,Eagles,Sun Belt
-2640,Texas Southern,Tigers,SWAC
-2377,McNeese,Cowboys,Southland
-2627,Tarleton,Texans,WAC
-103,Boston College,Eagles,ACC
-331,Eastern Washington,Eagles,Big Sky
-204,Oregon State,Beavers,Pac-12
-344,Mississippi State,Bulldogs,SEC
-2005,Air Force,Falcons,Mountain West
-61,Georgia,Bulldogs,SEC
-2649,Toledo,Rockets,MAC
-201,Oklahoma,Sooners,Big 12
-278,Fresno State,Bulldogs,Mountain West
-2029,Arkansas-Pine Bluff,Golden Lions,SWAC
-2754,Youngstown State,Penguins,MVFC
-2623,Missouri State,Bears,MVFC
-127,Michigan State,Spartans,Big Ten
-2390,Miami,Hurricanes,ACC
-21,San Diego State,Aztecs,Mountain West
-2641,Texas Tech,Red Raiders,Big 12
-58,South Florida,Bulls,American
-145,Ole Miss,Rebels,SEC
-221,Pittsburgh,Panthers,ACC
-2747,Wofford,Terriers,Southern
-2000,Abilene Christian,Wildcats,WAC
-222,Villanova,Wildcats,CAA
-79,Southern Illinois,Salukis,MVFC
-2509,Purdue,Boilermakers,Big Ten
-119,Towson,Tigers,CAA
-2083,Bucknell,Bison,Patriot
-25,California,Golden Bears,Pac-12
-2655,Tulane,Green Wave,American
-2619,Stony Brook,Seawolves,CAA
-2630,UT Martin,Skyhawks,OVC
-2448,North Carolina A&T,Aggies,Big South
-2097,Campbell,Fighting Camels,Big South
-55,Jacksonville State,Gamecocks,ASUN
-2466,Northwestern State,Demons,Southland
-2634,Tennessee State,Tigers,OVC
-2116,UCF,Knights,American
-309,Louisiana,Ragin' Cajuns,Sun Belt
-147,Montana State,Bobcats,Big Sky
-2449,North Dakota State,Bison,MVFC
-324,Coastal Carolina,Chanticleers,Sun Belt
-236,Chattanooga,Mocs,Southern
-275,Wisconsin,Badgers,Big Ten
-2306,Kansas State,Wildcats,Big 12
-8,Arkansas,Razorbacks,SEC
-57,Florida,Gators,SEC
-24,Stanford,Cardinal,Pac-12
-251,Texas,Longhorns,Big 12
-227,Rhode Island,Rams,CAA
-26,UCLA,Bruins,Pac-12
-2230,Fordham,Rams,Patriot
-135,Minnesota,Golden Gophers,Big Ten
-84,Indiana,Hoosiers,Big Ten
-256,James Madison,Dukes,Sun Belt
-59,Georgia Tech,Yellow Jackets,ACC
-16,Sacramento State,Hornets,Big Sky
-2426,Navy,Midshipmen,American
-2294,Iowa,Hawkeyes,Big Ten
-2277,Houston Christian,Huskies,Southland
-167,New Mexico,Lobos,Mountain West
-264,Washington,Huskies,Pac-12
-130,Michigan,Wolverines,Big Ten
-197,Oklahoma State,Cowboys,Big 12
-77,Northwestern,Wildcats,Big Ten
-245,Texas A&M,Aggies,SEC
-151,East Carolina,Pirates,American
-2643,The Citadel,Bulldogs,Southern
-160,New Hampshire,Wildcats,CAA
-99,LSU,Tigers,SEC
-2,Auburn,Tigers,SEC
-194,Ohio State,Buckeyes,Big Ten
-2193,East Tennessee State,Buccaneers,Southern
-2453,North Alabama,Lions,ASUN
-3101,Utah Tech,Trailblazers,WAC
+SCHOOL_ID,SCHOOL_NAME,SCHOOL_MASCOT,SCHOOL_CONFERENCE
+2046,Austin Peay,Governors,ASUN
+158,Nebraska,Cornhuskers,Big Ten
+304,Idaho State,Bengals,Big Sky
+41,UConn,Huskies,FBS Indep.
+2751,Wyoming,Cowboys,Mountain West
+2184,Duquesne,Dukes,NEC
+2429,Charlotte,49ers,C-USA
+50,Florida A&M,Rattlers,SWAC
+2440,Nevada,Wolf Pack,Mountain West
+249,North Texas,Mean Green,C-USA
+238,Vanderbilt,Commodores,SEC
+2117,Central Michigan,Chippewas,MAC
+277,West Virginia,Mountaineers,Big 12
+2678,VMI,Keydets,Southern
+2598,St. Francis (PA),Red Flash,NEC
+2050,Ball State,Cardinals,MAC
+2569,South Carolina State,Bulldogs,MEAC
+2803,Bryant,Bulldogs,Big South
+112358,Long Island University,Sharks,NEC
+213,Penn State,Nittany Lions,Big Ten
+2197,Eastern Illinois,Panthers,OVC
+2010,Alabama A&M,Bulldogs,SWAC
+2348,Louisiana Tech,Bulldogs,C-USA
+166,New Mexico State,Aggies,FBS Indep.
+2464,Northern Arizona,Lumberjacks,Big Sky
+13,Cal Poly,Mustangs,Big Sky
+2502,Portland State,Vikings,Big Sky
+2711,Western Michigan,Broncos,MAC
+2198,Eastern Kentucky,Colonels,ASUN
+259,Virginia Tech,Hokies,ACC
+2729,William & Mary,Tribe,CAA
+218,Temple,Owls,American
+2635,Tennessee Tech,Golden Eagles,OVC
+356,Illinois,Fighting Illini,Big Ten
+2628,TCU,Horned Frogs,Big 12
+328,Utah State,Aggies,Mountain West
+87,Notre Dame,Fighting Irish,FBS Indep.
+2483,Oregon,Ducks,Pac-12
+2534,Sam Houston,Bearkats,WAC
+254,Utah,Utes,Pac-12
+36,Colorado State,Rams,Mountain West
+2638,UTEP,Miners,C-USA
+399,Albany,Great Danes,CAA
+152,NC State,Wolfpack,ACC
+242,Rice,Owls,C-USA
+2065,Bethune-Cookman,Wildcats,SWAC
+2287,Illinois State,Redbirds,MVFC
+2132,Cincinnati,Bearcats,American
+193,Miami (OH),RedHawks,MAC
+2653,Troy,Trojans,Sun Belt
+248,Houston,Cougars,American
+252,BYU,Cougars,FBS Indep.
+2115,Central Connecticut,Blue Devils,NEC
+2571,South Dakota State,Jackrabbits,MVFC
+2084,Buffalo,Bulls,MAC
+164,Rutgers,Scarlet Knights,Big Ten
+153,North Carolina,Tar Heels,ACC
+48,Delaware,Blue Hens,CAA
+257,Richmond,Spiders,CAA
+2460,Northern Iowa,Panthers,MVFC
+2546,Southeast Missouri State,Redhawks,OVC
+189,Bowling Green,Falcons,MAC
+12,Arizona,Wildcats,Pac-12
+155,North Dakota,Fighting Hawks,MVFC
+2450,Norfolk State,Spartans,MEAC
+202,Tulsa,Golden Hurricane,American
+302,UC Davis,Aggies,Big Sky
+2447,Nicholls,Colonels,Southland
+326,Texas State,Bobcats,Sun Belt
+2415,Morgan State,Bears,MEAC
+2226,Florida Atlantic,Owls,C-USA
+2393,Middle Tennessee,Blue Raiders,C-USA
+2382,Mercer,Bears,Southern
+2210,Elon,Phoenix,CAA
+233,South Dakota,Coyotes,MVFC
+349,Army,Black Knights,FBS Indep.
+2335,Liberty,Flames,FBS Indep.
+113,UMass,Minutemen,FBS Indep.
+2545,SE Louisiana,Lions,Southland
+2755,Grambling,Tigers,SWAC
+235,Memphis,Tigers,American
+2247,Georgia State,Panthers,Sun Belt
+2567,SMU,Mustangs,American
+2142,Colgate,Raiders,Patriot
+93,Murray State,Racers,OVC
+2433,UL Monroe,Warhawks,Sun Belt
+97,Louisville,Cardinals,ACC
+311,Maine,Black Bears,CAA
+70,Idaho,Vandals,Big Sky
+68,Boise State,Broncos,Mountain West
+2309,Kent State,Golden Flashes,MAC
+98,Western Kentucky,Hilltoppers,C-USA
+52,Florida State,Seminoles,ACC
+228,Clemson,Tigers,ACC
+333,Alabama,Crimson Tide,SEC
+2535,Samford,Bulldogs,Southern
+2032,Arkansas State,Red Wolves,Sun Belt
+62,Hawai'i,Rainbow Warriors,Mountain West
+231,Furman,Paladins,Southern
+2026,Appalachian State,Mountaineers,Sun Belt
+276,Marshall,Thundering Herd,Sun Belt
+239,Baylor,Bears,Big 12
+30,USC,Trojans,Pac-12
+9,Arizona State,Sun Devils,Pac-12
+96,Kentucky,Wildcats,SEC
+253,Southern Utah,Thunderbirds,WAC
+2006,Akron,Zips,MAC
+2572,Southern Miss,Golden Eagles,Sun Belt
+2579,South Carolina,Gamecocks,SEC
+2633,Tennessee,Volunteers,SEC
+2127,Charleston Southern,Buccaneers,Big South
+265,Washington State,Cougars,Pac-12
+2110,Central Arkansas,Bears,ASUN
+154,Wake Forest,Demon Deacons,ACC
+2710,Western Illinois,Leathernecks,MVFC
+150,Duke,Blue Devils,ACC
+195,Ohio,Bobcats,MAC
+2636,UTSA,Roadrunners,C-USA
+142,Missouri,Tigers,SEC
+6,South Alabama,Jaguars,Sun Belt
+322,Lafayette,Leopards,Patriot
+38,Colorado,Buffaloes,Pac-12
+338,Kennesaw State,Owls,ASUN
+120,Maryland,Terrapins,Big Ten
+2439,UNLV,Rebels,Mountain West
+66,Iowa State,Cyclones,Big 12
+258,Virginia,Cavaliers,ACC
+282,Indiana State,Sycamores,MVFC
+2681,Wagner,Seahawks,NEC
+2458,Northern Colorado,Bears,Big Sky
+2011,Alabama State,Hornets,SWAC
+2916,Incarnate Word,Cardinals,Southland
+2305,Kansas,Jayhawks,Big 12
+295,Old Dominion,Monarchs,Sun Belt
+107,Holy Cross,Crusaders,Patriot
+2523,Robert Morris,Colonials,Big South
+2241,Gardner-Webb,Bulldogs,Big South
+5,UAB,Blazers,C-USA
+183,Syracuse,Orange,ACC
+2717,Western Carolina,Catamounts,Southern
+2692,Weber State,Wildcats,Big Sky
+2016,Alcorn State,Braves,SWAC
+2320,Lamar,Cardinals,Southland
+47,Howard,Bison,MEAC
+2459,Northern Illinois,Huskies,MAC
+2199,Eastern Michigan,Eagles,MAC
+2229,Florida International,Panthers,C-USA
+2617,Stephen F. Austin,Lumberjacks,WAC
+23,San José State,Spartans,Mountain West
+2582,Southern,Jaguars,SWAC
+290,Georgia Southern,Eagles,Sun Belt
+2640,Texas Southern,Tigers,SWAC
+2377,McNeese,Cowboys,Southland
+2627,Tarleton,Texans,WAC
+103,Boston College,Eagles,ACC
+331,Eastern Washington,Eagles,Big Sky
+204,Oregon State,Beavers,Pac-12
+344,Mississippi State,Bulldogs,SEC
+2005,Air Force,Falcons,Mountain West
+61,Georgia,Bulldogs,SEC
+2649,Toledo,Rockets,MAC
+201,Oklahoma,Sooners,Big 12
+278,Fresno State,Bulldogs,Mountain West
+2029,Arkansas-Pine Bluff,Golden Lions,SWAC
+2754,Youngstown State,Penguins,MVFC
+2623,Missouri State,Bears,MVFC
+127,Michigan State,Spartans,Big Ten
+2390,Miami,Hurricanes,ACC
+21,San Diego State,Aztecs,Mountain West
+2641,Texas Tech,Red Raiders,Big 12
+58,South Florida,Bulls,American
+145,Ole Miss,Rebels,SEC
+221,Pittsburgh,Panthers,ACC
+2747,Wofford,Terriers,Southern
+2000,Abilene Christian,Wildcats,WAC
+222,Villanova,Wildcats,CAA
+79,Southern Illinois,Salukis,MVFC
+2509,Purdue,Boilermakers,Big Ten
+119,Towson,Tigers,CAA
+2083,Bucknell,Bison,Patriot
+25,California,Golden Bears,Pac-12
+2655,Tulane,Green Wave,American
+2619,Stony Brook,Seawolves,CAA
+2630,UT Martin,Skyhawks,OVC
+2448,North Carolina A&T,Aggies,Big South
+2097,Campbell,Fighting Camels,Big South
+55,Jacksonville State,Gamecocks,ASUN
+2466,Northwestern State,Demons,Southland
+2634,Tennessee State,Tigers,OVC
+2116,UCF,Knights,American
+309,Louisiana,Ragin' Cajuns,Sun Belt
+147,Montana State,Bobcats,Big Sky
+2449,North Dakota State,Bison,MVFC
+324,Coastal Carolina,Chanticleers,Sun Belt
+236,Chattanooga,Mocs,Southern
+275,Wisconsin,Badgers,Big Ten
+2306,Kansas State,Wildcats,Big 12
+8,Arkansas,Razorbacks,SEC
+57,Florida,Gators,SEC
+24,Stanford,Cardinal,Pac-12
+251,Texas,Longhorns,Big 12
+227,Rhode Island,Rams,CAA
+26,UCLA,Bruins,Pac-12
+2230,Fordham,Rams,Patriot
+135,Minnesota,Golden Gophers,Big Ten
+84,Indiana,Hoosiers,Big Ten
+256,James Madison,Dukes,Sun Belt
+59,Georgia Tech,Yellow Jackets,ACC
+16,Sacramento State,Hornets,Big Sky
+2426,Navy,Midshipmen,American
+2294,Iowa,Hawkeyes,Big Ten
+2277,Houston Christian,Huskies,Southland
+167,New Mexico,Lobos,Mountain West
+264,Washington,Huskies,Pac-12
+130,Michigan,Wolverines,Big Ten
+197,Oklahoma State,Cowboys,Big 12
+77,Northwestern,Wildcats,Big Ten
+245,Texas A&M,Aggies,SEC
+151,East Carolina,Pirates,American
+2643,The Citadel,Bulldogs,Southern
+160,New Hampshire,Wildcats,CAA
+99,LSU,Tigers,SEC
+2,Auburn,Tigers,SEC
+194,Ohio State,Buckeyes,Big Ten
+2193,East Tennessee State,Buccaneers,Southern
+2453,North Alabama,Lions,ASUN
+3101,Utah Tech,Trailblazers,WAC
+2674,Valparaiso,Beacons,Pioneer

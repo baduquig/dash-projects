@@ -37,7 +37,7 @@ conferences = ['ACC', 'American', 'Big 12', 'Big Ten', 'C-USA', 'FBS Indep.', 'M
 today = datetime.datetime.now()
 first_week = datetime.datetime(2022, 9, 5)
 default_week = 1
-while today >= first_week:
+while (today >= first_week) and (default_week < 15):
     first_week += datetime.timedelta(days=7)
     default_week += 1
 

@@ -70,9 +70,8 @@ class ParseGames:
         rq = requests.get(game_page_url)
         sp = BeautifulSoup(rq.content, 'html.parser')
 
-        game_info = sp.find('div', id='gamepackage-game-information')
-        location_details = game_info.find('div', class_='location-details')
-        game_location = location_details.find('div', class_='game-location')
+        game_info = sp.find('section', class_='GameInfo')
+        game_location = game_info.find('span', class_='Location__Text')
         location_text = game_location.text.lstrip().rstrip()
         return location_text
 
@@ -82,6 +81,8 @@ class ParseGames:
         games_file = open('../../data/cfb_schedule_2022/games.csv', 'w')
         writer = csv.writer(games_file)
         writer.writerow(self.file_header)
+
+        print('\nGame parsing starting...')
 
         # Iterate through weeks in schedule
         for week in range(self.weeks):
@@ -109,10 +110,15 @@ class ParseGames:
                         game_location = self.set_location(game)
 
                         new_game_row = [game_week, game_date, game_time_score, away_school, home_school, game_location]
-                        print(f'Writing game "{new_game_row}" to file')
+                        # print(f'Writing game "{new_game_row}" to file')
                         writer.writerow(new_game_row)
                     except:
-                        pass
+                        print(f'\nGame {game} information not retrieved...')
+                        print(game_time_score)
+                        print(away_school)
+                        print(home_school)
+                        print(game_location)
+                        print()
 
         games_file.close()
         print('Game parsing complete...\n')

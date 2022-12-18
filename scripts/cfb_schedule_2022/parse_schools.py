@@ -58,6 +58,8 @@ class ParseSchools:
         writer = csv.writer(schools_file)
         writer.writerow(self.file_header)
 
+        print('\nSchool parsing starting...')
+
         # Iterate through each unique school
         schools = self.get_all_schools()
         for school_id in schools:
