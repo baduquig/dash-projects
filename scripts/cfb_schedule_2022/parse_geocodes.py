@@ -38,7 +38,7 @@ class ParseGeocodes:
     def parse_geocodes(self):
 
         # CSV File Creation
-        locations_file = open('../../data/cfb_schedule_2022/locations.csv', 'w')
+        locations_file = open('../../data/cfb_schedule_2022/locations.csv', 'w', newline='')
         writer = csv.writer(locations_file)
         writer.writerow(self.file_header)
 

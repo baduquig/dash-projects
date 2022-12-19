@@ -54,7 +54,7 @@ class ParseSchools:
     def parse_schools(self):
         
         # CSV File Creation
-        schools_file = open('../../data/cfb_schedule_2022/schools.csv', 'w')
+        schools_file = open('../../data/cfb_schedule_2022/schools.csv', 'w', newline='')
         writer = csv.writer(schools_file)
         writer.writerow(self.file_header)
 

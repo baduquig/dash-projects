@@ -78,7 +78,7 @@ class ParseGames:
     def parse_games(self):
         
         # CSV File Creation
-        games_file = open('../../data/cfb_schedule_2022/games.csv', 'w')
+        games_file = open('../../data/cfb_schedule_2022/games.csv', 'w', newline='')
         writer = csv.writer(games_file)
         writer.writerow(self.file_header)
 
@@ -93,7 +93,7 @@ class ParseGames:
             req = requests.get(schedule_page)
             soup = BeautifulSoup(req.content, 'html.parser')
 
-            print(f'\nParsing week {game_week} games:')
+            print(f'Parsing week {game_week} games:')
 
             # Iterate through gamedays in week
             gamedays = self.get_gamedays(soup)
