@@ -1,3 +1,4 @@
+"""
 import dash, datetime, plotly.graph_objects as go, pandas as pd
 from dash import callback, html, dcc, Input, Output
 
@@ -247,3 +248,4 @@ def generate_grid(selected_week, selected_conferences, selected_days, selected_t
 
 
 #~~~ Callbacks ~~~#
+"""
